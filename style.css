@@ -1,3 +1,15 @@
+/*
+Theme Name: The New Door Template
+Theme URI: https://https://thenewdoor.co.in/
+Author: The New Door
+Author URI: https://thenewdoor.co.in/]
+Description: The New Door
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: The New Door
+*/
+
 :root{
     --bodycolor: #FEFEF3;
     --bodyfont: 'Open Sans', sans-serif;
@@ -206,6 +218,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 .nav-bar .nav-link ul{
     display: flex;
@@ -220,6 +233,17 @@ header.scrolled {
     letter-spacing: 0.2px;
     text-transform: capitalize;
     text-decoration: none;
+}
+.nav-bar .nav-link ul .custom-button{
+    color: var(--beige);
+}
+.nav-ham{
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+.nav-ham-dd{
+    display: none;
 }
 
 /* Header Css Ends */
@@ -692,6 +716,37 @@ footer{
     .form-pop-wrap{
 		width: 75%;
 	}
+    .nav-ham{
+        display: block;
+        position: relative;
+    }
+    .nav-link{
+		display: none;
+	}
+    .nav-ham-dd{
+        display: block;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: max-content;
+        height: auto;
+        background-color: var(--bodycolor);
+        border: 1px solid;
+        padding: 20px 30px;
+        transition: 1s clip-path ease;
+        clip-path: inset(0 0 100% 0);
+    }
+    .nav-ham-dd .nav-link{
+        display: flex;
+    }
+    .nav-ham-dd .nav-link ul{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .nav-ham:hover .nav-ham-dd{
+        clip-path: inset(0 0 0% 0);
+    }
 }
 /* Max Width 1200px Ends */
 /* Max Width 1100px */
@@ -792,6 +847,12 @@ footer{
 		width: 15px;
 		height: 15px;
 	}
+    .nav-cta{
+        display: none;
+    }
+    .nav-logo{
+        width: 25%;
+    }
 }
 /* Max Width 767px Ends */
 /* Responsive Css Ends */
